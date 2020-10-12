@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="text-center">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">SUCS + Discord</h1>
+        <p class="lead">Connect your Swansea University Computer Society account to Discord. You'll gain the fancy <span style="color: orange">@members</span> role and loads of extra abilities!</p>
+        <div class="step">
+            <p class="lead">
+                <a href="https://projects.sucs.org/oauth/authorize?client_id=<%= sucs_client_id%>&redirect_uri=<%= sucs_redirect_uri %>&response_type=code&scope=openid profile email" class="btn btn-lg btn-secondary disabled">SUCS Logged In</a>
+            </p>
+            <p class="font-italic text-secondary">This will take you to the SUCS GitLab page to login.</p>
+        </div>
+        <div class="step">
+            <p class="lead">
+                <a href="https://discord.com/api/oauth2/authorize?response_type=code&client_id=<%= discord_client_id%>&scope=identify guilds.join&redirect_uri=<%= discord_redirect_uri %>&prompt=consent" class="btn btn-lg btn-secondary disabled">Discord Logged In</a>
+            </p>
+            <p class="font-italic text-secondary">Log in to Discord and you'll automatically be added to the server.</p>
+        </div>
+        <div class="step">
+            <p class="lead">
+                <a href="" class="btn btn-lg btn-primary">Connected</a>
+            </p>
+            <p class="font-italic">You can now close this page.</p>
+        </div>
+    </main>
+</div>
+</body>
+</html>
